@@ -10,15 +10,28 @@ import '@/assets/css/style.css'
 import '@/assets/list/bootstrap-3.3.7-dist/css/bootstrap.min.css'
 import '@/assets/list/bootstrap-3.3.7-dist/js/bootstrap.min.js'
 import '@/assets/list/font-awesome-4.7.0/css/font-awesome.min.css'
+import Vuex from "vuex"
 
 
 Vue.config.productionTip = false
 Vue.use(ElementUI);
+Vue.use(Vuex)
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  store: new Vuex.Store({
+    state: {
+      addhy: false,
+    },
+    mutations: {
+      addClick(state,payload) {
+        state.addhy = payload;
+      },
+      
+    }
+  })
 })

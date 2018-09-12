@@ -59,7 +59,7 @@
                             Excel导入会议室
                         </div>
 
-                        <div class="addqyu">
+                        <div class="addqyu" @click="addClick()">
                             <span class="el-icon-circle-plus"></span> 添加会议室
                         </div>
 
@@ -121,7 +121,7 @@
                     </div>
                 </div>
             </div>
-            <HysglAdd></HysglAdd>
+            <HysglAdd v-if="addhy"></HysglAdd>
         </div>
     </div>
 </template>
@@ -200,6 +200,11 @@
         components: {
             HysglAdd
         },
+        computed: {
+            addhy() {
+                return this.$store.state.addhy
+            }
+        },
         methods: {
             tabClick(e, index) {
                 $('tr').css({ 'backgroundColor': "white" }).find('td').css({ "color": "#454545" })
@@ -212,6 +217,10 @@
                 console.log(indexC)
                 $(e.currentTarget).find('span').removeClass('dlColor')
                 $(e.currentTarget).find('span').eq(indexC).addClass('dlColor')
+            },
+            //添加会议室
+            addClick(){
+                this.$store.commit('addClick',true)
             }
         }
     }
