@@ -6,14 +6,14 @@
                     添加会议室
                 </div>
                 <div class="form">
-                    <form action="">
+                    <form action="" @submit="fromSubmit($event)">
                         <div class="quyu">
                             <span class="qy_title">所属于区域</span>
                             <span class="qy_red">*</span>
                             <select name="" id="" class="qy_input" :model="formData.quyu">
                                 <option value="北京市海淀区-奥北科技园">北京市海淀区-奥北科技园</option>
-                                <option value="">上海市浦东新区-张江高科</option>
-                                <option value="">北京市海淀区-奥北科技园</option>
+                                <option value="上海市浦东新区-张江高科">上海市浦东新区-张江高科</option>
+                                <option value="北京市海淀区-奥北科技园">北京市海淀区-奥北科技园</option>
                             </select>
                         </div>
 
@@ -164,6 +164,10 @@
             },
             fromClick(e) {
                 e.stopPropagation()
+            },
+            fromSubmit(e) {
+                e.preventDefault()
+                this.$store.commit("addClick", false);
             }
         }
     };

@@ -26,11 +26,15 @@ new Vue({
   store: new Vuex.Store({
     state: {
       addhy: false,
+      delehy:false,
     },
     mutations: {
       addClick(state,payload) {
         state.addhy = payload;
       },
+      delClick(state,payload){
+        state.delehy = payload
+      }
       
     }
   })
