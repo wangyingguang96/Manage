@@ -111,9 +111,9 @@
                                     {{item.keyong}}
                                 </td>
                                 <td class="tab_buton">
-                                    <span class="el-icon-delete" @click="delClick()"></span>
-                                    <span class="el-icon-edit-outline"></span>
-                                    <span class="el-icon-picture"></span>
+                                    <span class="el-icon-delete" @click="delClick(item.bianh)"></span>
+                                    <span class="el-icon-edit-outline" @click="xiugaiClick($event)"></span>
+                                    <span class="el-icon-picture" @click="imgClick($event)"></span>
                                 </td>
                             </tr>
                         </table>
@@ -121,7 +121,9 @@
                 </div>
             </div>
             <HysglAdd v-if="addhy"></HysglAdd>
-            <HysglDel v-if="delhy"></HysglDel>
+            <HysglDel v-if="delhy" :delbiahao="delbiahao"></HysglDel>
+            <Hysglxiugai v-if="xiugai"></Hysglxiugai>
+            <Hysglimg v-if="hyimg" :delbiahao="delbiahao"></Hysglimg>
         </div>
     </div>
 </template>
@@ -129,6 +131,8 @@
 <script>
 import HysglAdd from "./Hysgl_add";
 import HysglDel from "./Hysgl_del";
+import Hysglxiugai from "./Hysgl_xiugai"
+import Hysglimg from "./Hysgl_img"
 export default {
   data() {
     return {
@@ -141,6 +145,7 @@ export default {
       valu1: "0",
       valu2: "9999",
       indexClick: 1,
+      delbiahao:"",
       tabldDate: [
         {
           lohao: "10-A座",
@@ -157,7 +162,7 @@ export default {
         {
           lohao: "10-A座",
           louceng: "1",
-          bianh: "1-101",
+          bianh: "1-102",
           name: "大会堂",
           rongl: "999",
           miaos: "此会议预定需要经管理员审批",
@@ -169,7 +174,7 @@ export default {
         {
           lohao: "10-A座",
           louceng: "1",
-          bianh: "1-101",
+          bianh: "2-101",
           name: "大会堂",
           rongl: "999",
           miaos: "此会议预定需要经管理员审批",
@@ -207,7 +212,9 @@ export default {
   },
   components: {
     HysglAdd,
-    HysglDel
+    HysglDel,
+    Hysglxiugai,
+    Hysglimg
   },
   computed: {
     addhy() {
@@ -215,6 +222,12 @@ export default {
     },
     delhy(){
         return this.$store.state.delehy
+    },
+    xiugai(){
+        return this.$store.state.xiugai
+    },
+    hyimg(){
+      return this.$store.state.hyimg
     }
   },
   methods: {
@@ -246,8 +259,17 @@ export default {
       this.$store.commit("addClick", true);
     },
     //删除会议室
-    delClick(){
+    delClick(parem){
         this.$store.commit('delClick',true)
+        this.delbiahao = parem
+    },
+    //修改会议室
+    xiugaiClick(e){
+      this.$store.commit('xiugaiClick',true)
+    },
+    //显示图片
+    imgClick(e){
+      this.$store.commit('hyimgClick',true)
     }
   }
 };

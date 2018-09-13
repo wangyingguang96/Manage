@@ -26,16 +26,23 @@ new Vue({
   store: new Vuex.Store({
     state: {
       addhy: false,
-      delehy:false,
+      delehy: false,
+      xiugai: false,
+      hyimg: false,
     },
     mutations: {
-      addClick(state,payload) {
+      addClick(state, payload) {
         state.addhy = payload;
       },
-      delClick(state,payload){
+      delClick(state, payload) {
         state.delehy = payload
+      },
+      xiugaiClick(state, payload) {
+        state.xiugai = payload
+      },
+      hyimgClick(state, payload) {
+        state.hyimg = payload
       }
-      
     }
   })
 })

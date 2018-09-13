@@ -7,6 +7,7 @@ import Wodeyuding from '@/components/router/Wodeyuding'
 import Yudingshenpi from '@/components/router/Yudingshenpi'
 import HysYdgl from '@/components/router/HysYdgl'
 import Hysgl from '@/components/router/Hysgl'
+import Qvyujianzhu from '@/components/router/Qvyujianzhu'
 
 Vue.use(Router)
 
@@ -36,6 +37,10 @@ export default new Router({
       path: '/hysgl',
       name: 'Hysgl',
       component: Hysgl
+    }, {
+      path: '/qvyujianzhu',
+      name: 'Qvyujianzhu',
+      component: Qvyujianzhu
     }
   ]
 })

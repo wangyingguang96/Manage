@@ -40,114 +40,117 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {};
-        },
-        methods: {
-            jiaEnter(e) {
-                $(e.currentTarget)
-                    .find(".span_1")
-                    .css({ transform: "rotate(360deg)" });
-            },
-            jiaLeave(e) {
-                $(e.currentTarget)
-                    .find(".span_1")
-                    .css({ transform: "rotate(0deg)" });
-            },
+export default {
+  data() {
+    return {};
+  },
+  methods: {
+    jiaEnter(e) {
+      $(e.currentTarget)
+        .find(".span_1")
+        .css({ transform: "rotate(360deg)" });
+    },
+    jiaLeave(e) {
+      $(e.currentTarget)
+        .find(".span_1")
+        .css({ transform: "rotate(0deg)" });
+    },
 
-            duiEnter(e) {
-                $(e.currentTarget).find(".span_1>span").stop().animate({ 'top': "50px" }, 150, function () {
-                    $(this).css({ 'top': "0px" })
-                })
-            }
-        }
-    };
+    duiEnter(e) {
+      $(e.currentTarget)
+        .find(".span_1>span")
+        .stop()
+        .animate({ top: "50px" }, 150, function() {
+          $(this).css({ top: "0px" });
+        });
+    }
+  }
+};
 </script>
 
 <style scoped>
-    .home {
-        width: 100%;
-        height: 100%;
-        background-color: #e4e7e8;
-    }
+.home {
+  width: 100%;
+  height: 100%;
+  background-color: #e4e7e8;
+}
 
-    .homeb {
-        width: 880px;
-        height: 500px;
-        margin: 0 auto;
-        padding: 15px 10px;
-        box-sizing: border-box;
-    }
+.homeb {
+  width: 880px;
+  height: 500px;
+  margin: 0 auto;
+  padding: 15px 10px;
+  box-sizing: border-box;
+}
 
-    .hb_top * {
-        padding: 0;
-        margin: 0;
-    }
+.hb_top * {
+  padding: 0;
+  margin: 0;
+}
 
-    .hb_top h2 {
-        font-size: 22px;
-        font-weight: bold;
-        line-height: 32px;
-        color: #333;
-        font-family: "PingFang SC";
-        margin: 18px 0;
-    }
+.hb_top h2 {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 32px;
+  color: #333;
+  font-family: "PingFang SC";
+  margin: 18px 0;
+}
 
-    .hb_top p {
-        font-size: 13px;
-        font-weight: 100;
-        line-height: 30px;
-        height: 30px;
-        font-family: "微软雅黑";
-        padding: 0 4px;
-        box-sizing: border-box;
-        margin-top: 5px;
-    }
+.hb_top p {
+  font-size: 13px;
+  font-weight: 100;
+  line-height: 30px;
+  height: 30px;
+  font-family: "微软雅黑";
+  padding: 0 4px;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
 
-    .pbgcolor {
-        background-color: #ffc200;
-        color: white;
-        width: 535px;
-    }
+.pbgcolor {
+  background-color: #ffc200;
+  color: white;
+  width: 535px;
+}
 
-    .hb_bottom {
-        font-size: 128px;
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-    }
-    .hb_bottom a{
-        color: #333;
-    }
+.hb_bottom {
+  font-size: 128px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.hb_bottom a {
+  color: #333;
+}
 
-    .hbb_cont {
-        width: 40%;
-        height: 220px;
-        text-align: center;
-        position: relative;
-        margin-top: 20px;
-    }
+.hbb_cont {
+  width: 40%;
+  height: 220px;
+  text-align: center;
+  position: relative;
+  margin-top: 20px;
+}
 
-    .span_1 {
-        display: inline-block;
-        font-size: 55px;
-        color: white;
-        position: absolute;
-        top: 65px;
-        left: 145px;
-        transition: all 0.5s linear;
-        transform: rotate(0deg);
-    }
+.span_1 {
+  display: inline-block;
+  font-size: 55px;
+  color: white;
+  position: absolute;
+  top: 65px;
+  left: 145px;
+  transition: all 0.5s linear;
+  transform: rotate(0deg);
+}
 
-    .span_1>span {
-        position: relative;
-        /* transition: all 0.1s linear; */
-    }
+.span_1 > span {
+  position: relative;
+  /* transition: all 0.1s linear; */
+}
 
-    .hbb_cont p {
-        font-weight: 100;
-        font-size: 32px;
-        margin-top: -20px;
-    }
+.hbb_cont p {
+  font-weight: 100;
+  font-size: 32px;
+  margin-top: -20px;
+}
 </style>

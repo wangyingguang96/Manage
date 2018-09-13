@@ -4,7 +4,7 @@
             <img src="../../assets/imgs/logo.png" alt="">
             <h3>会议预定系统</h3>
             <span>/</span>
-            <div>首页</div>
+            <div class="myshouye">首页</div>
         </div>
         <div class="navb_conte">
             <span class="el-icon-search"></span>
@@ -45,7 +45,7 @@
     }
 
     .navb_left {
-        width: 330px;
+        width: 370px;
         height: 100%;
         display: flex;
         justify-content: space-between;
@@ -69,13 +69,14 @@
     }
 
     .navb_left>div {
-        width: 42px;
+        /* width: 100%; */
         height: 24px;
         background-color: #007aff;
         color: white;
         line-height: 24px;
         font-size: 12px;
         text-align: center;
+        padding: 0 3px;
     }
 
     .navb_left>span {        
