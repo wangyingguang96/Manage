@@ -29,6 +29,7 @@ new Vue({
       delehy: false,
       xiugai: false,
       hyimg: false,
+      asideColor:"",
     },
     mutations: {
       addClick(state, payload) {
@@ -42,6 +43,10 @@ new Vue({
       },
       hyimgClick(state, payload) {
         state.hyimg = payload
+      },
+      asdiColor(state,payload){
+        alert(payload)
+        state.asideColor = payload
       }
     }
   })
